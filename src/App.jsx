@@ -6,7 +6,7 @@ function Square({ value, onSquareClick }) {
   return (
     <button
       type="button"
-      className="btn btn-outline-primary fw-bold fs-2 square d-flex align-items-center justify-content-center"
+      className="btn btn-outline-success fw-bold fs-2 square d-flex align-items-center justify-content-center"
       onClick={onSquareClick}
       style={{ width: '80px', height: '80px' }}
       aria-label={value ? `Casilla ${value}` : 'Casilla vacía'}
@@ -77,7 +77,7 @@ function Board({ xIsNext, squares, onPlay, onRestart }) {
       {(winner || isDraw) && (
         <button
           type="button"
-          className="btn btn-primary mt-3"
+          className="btn btn-success mt-3"
           onClick={onRestart}
         >
           Restart game
