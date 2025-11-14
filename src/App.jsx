@@ -1,14 +1,30 @@
 import { useState, useEffect } from 'react';
+import XIcon from './assets/X.png';
+import OIcon from './assets/O.png';
 
 function Square({ value, onSquareClick }) {
   return (
     <button
       type="button"
-      className="btn btn-outline-primary fw-bold fs-2 square"
+      className="btn btn-outline-primary fw-bold fs-2 square d-flex align-items-center justify-content-center"
       onClick={onSquareClick}
       style={{ width: '80px', height: '80px' }}
+      aria-label={value ? `Casilla ${value}` : 'Casilla vacía'}
     >
-      {value}
+      {value === 'X' && (
+        <img
+          src={XIcon}
+          alt="X"
+          style={{ maxWidth: '70%', maxHeight: '70%' }}
+        />
+      )}
+      {value === 'O' && (
+        <img
+          src={OIcon}
+          alt="O"
+          style={{ maxWidth: '70%', maxHeight: '70%' }}
+        />
+      )}
     </button>
   );
 }
